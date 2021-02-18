@@ -12,7 +12,14 @@ describe('UsersController', () => {
     controller = module.get<UsersController>(UsersController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  describe('users', () => {
+    // Check if user controller is defined
+    it('should be defined', () => {
+      expect(controller).toBeDefined();
+    });
+    // Check if getAll return 'All Users returned'
+    it('Get All Users', () => {
+      expect(controller.getAll()).toBe('All Users returned');
+    });
   });
 });
